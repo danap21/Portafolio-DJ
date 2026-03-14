@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>PetMarket: Rediseño Ecommerce | Case Study – Daniela Jaimes</title>
+    <meta name="description" content="Case study del rediseño UX/UI de PetMarket: investigación, definición, ideación y solución de diseño centrada en el usuario." />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6",
+                        "secondary": "#8B5CF6",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#0F172A",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .stat-card:hover { transform: translateY(-4px); }
+        .step-line::after { content: ''; position: absolute; top: 3rem; left: 50%; width: 2px; height: calc(100% + 2rem); background: linear-gradient(to bottom, #1337ec33, transparent); transform: translateX(-50%); }
+        .step-line:last-child::after { display: none; }
+    </style>
+</head>
+
+<body class="bg-background-light font-display text-slate-900 transition-colors duration-300">
+
+    <!-- NAV -->
+    <header class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur-md">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-12">
+            <a href="index.html" class="flex items-center gap-2 text-primary hover:opacity-80 transition-opacity">
+                <span class="material-symbols-outlined">arrow_back</span>
+                <span class="font-bold text-slate-900">Volver al portafolio</span>
+            </a>
+            <div class="flex items-center gap-2 text-primary">
+                <span class="material-symbols-outlined text-2xl font-bold">polyline</span>
+                <span class="font-black text-slate-900">Daniela Jaimes</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+        <section class="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+            <!-- Decorative blobs -->
+            <div class="absolute top-0 left-0 h-96 w-96 rounded-full bg-primary/20 blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+            <div class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-orange-500/10 blur-3xl translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
+
+            <div class="relative mx-auto max-w-7xl px-6 py-20 lg:px-12 lg:py-32">
+                <div class="grid grid-cols-1 gap-16 lg:grid-cols-2 items-center">
+                    <div class="fade-in">
+                        <div class="mb-6 flex flex-wrap gap-2">
+                            <span class="rounded-full bg-primary/20 border border-primary/40 px-3 py-1 text-xs font-bold uppercase tracking-widest text-primary">E-commerce</span>
+                            <span class="rounded-full bg-white/10 border border-white/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white/80">UX Research</span>
+                            <span class="rounded-full bg-white/10 border border-white/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white/80">UI Design</span>
+                        </div>
+                        <h1 class="text-5xl font-black leading-tight tracking-tight lg:text-6xl">
+                            PetMarket<br>
+                            <span class="text-primary">Rediseño</span><br>
+                            Ecommerce
+                        </h1>
+                        <p class="mt-6 text-lg leading-relaxed text-slate-300 max-w-lg">
+                            Rediseño de los flujos de checkout y contacto para reducir la fricción, mejorar la jerarquía visual y aumentar la conversión en la plataforma de PetMarket.
+                        </p>
+                        <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6">
+                            <div class="stat-card rounded-2xl bg-white/5 border border-white/10 p-5 text-center transition-all duration-300">
+                                <p class="text-3xl font-black text-primary">2026</p>
+                                <p class="mt-1 text-xs text-slate-400 font-semibold uppercase tracking-wider">Año</p>
+                            </div>
+                            <div class="stat-card rounded-2xl bg-white/5 border border-white/10 p-5 text-center transition-all duration-300">
+                                <p class="text-3xl font-black text-primary">15</p>
+                                <p class="mt-1 text-xs text-slate-400 font-semibold uppercase tracking-wider">Usuarios</p>
+                            </div>
+                            <div class="stat-card rounded-2xl bg-white/5 border border-white/10 p-5 text-center transition-all duration-300">
+                                <p class="text-3xl font-black text-primary">8w</p>
+                                <p class="mt-1 text-xs text-slate-400 font-semibold uppercase tracking-wider">Duración</p>
+                            </div>
+                            <div class="stat-card rounded-2xl bg-white/5 border border-white/10 p-5 text-center transition-all duration-300">
+                                <p class="text-3xl font-black text-primary">Figma</p>
+                                <p class="mt-1 text-xs text-slate-400 font-semibold uppercase tracking-wider">Herramienta</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fade-in rounded-3xl overflow-hidden shadow-2xl shadow-black/40" style="background-color: #f0e8dc;">
+                        <img src="images/petmarket-cover.jpg" alt="PetMarket Case Study Cover" class="w-full h-full object-contain" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════ OVERVIEW STRIP ══════════════════ -->
+        <section class="border-b border-slate-200 bg-white py-10">
+            <div class="mx-auto max-w-7xl px-6 lg:px-12">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div class="fade-in">
+                        <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Rol</p>
+                        <p class="font-bold text-slate-900">UX/UI Designer (solo)</p>
+                    </div>
+                    <div class="fade-in">
+                        <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Metodología</p>
+                        <p class="font-bold text-slate-900">Design Thinking</p>
+                    </div>
+                    <div class="fade-in">
+                        <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Entregables</p>
+                        <p class="font-bold text-slate-900">Prototipo Hi-Fi · Guía UI</p>
+                    </div>
+                    <div class="fade-in">
+                        <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Plataforma</p>
+                        <p class="font-bold text-slate-900">Web · Mobile Web</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════ 01 · EL PROBLEMA ══════════════════ -->
+        <section class="mx-auto max-w-7xl px-6 py-24 lg:px-12" id="problema">
+            <div class="grid grid-cols-1 gap-16 lg:grid-cols-12 items-start">
+                <div class="lg:col-span-4 fade-in">
+                    <span class="inline-block rounded-full bg-red-100 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-red-500 mb-6">01 — Empatizar</span>
+                    <h2 class="text-4xl font-black leading-tight text-slate-900">Entendiendo el problema</h2>
+                    <p class="mt-4 text-slate-500 leading-relaxed">Los usuarios abandonaban el proceso de compra antes de finalizarlo. Pero ¿por qué?</p>
+                </div>
+                <div class="lg:col-span-8 space-y-6 fade-in">
+                    <!-- Pain point cards -->
+                    <div class="rounded-2xl border border-red-100 bg-red-50 p-8">
+                        <div class="flex items-start gap-5">
+                            <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-red-100 text-red-500">
+                                <span class="material-symbols-outlined">shopping_cart_off</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 mb-2">Checkout confuso y multi-paso sin orientación</h3>
+                                <p class="text-slate-600 leading-relaxed">Los usuarios no sabían cuántos pasos faltaban para completar la compra. La ausencia de un indicador de progreso generaba incertidumbre y abandono antes del pago.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl border border-orange-100 bg-orange-50 p-8">
+                        <div class="flex items-start gap-5">
+                            <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-orange-100 text-orange-500">
+                                <span class="material-symbols-outlined">mail_off</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 mb-2">Formulario de contacto sin trazabilidad</h3>
+                                <p class="text-slate-600 leading-relaxed">Al enviar un mensaje de consulta, los usuarios no recibían confirmación, tiempo estimado de respuesta ni ningún tipo de seguimiento dentro del sistema.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl border border-yellow-100 bg-yellow-50 p-8">
+                        <div class="flex items-start gap-5">
+                            <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-yellow-100 text-yellow-600">
+                                <span class="material-symbols-outlined">format_size</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 mb-2">Falta de jerarquía visual clara</h3>
+                                <p class="text-slate-600 leading-relaxed">El diseño original presentaba información sin orden visual claro, dificultando que el usuario identificara las acciones principales (CTAs) y generando carga cognitiva innecesaria.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metric highlight -->
+        <div class="bg-gradient-to-br from-primary to-secondary py-16">
+            <div class="mx-auto max-w-7xl px-6 lg:px-12">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-white">
+                    <div class="fade-in">
+                        <p class="text-6xl font-black">70%</p>
+                        <p class="mt-2 text-primary-foreground/80 font-semibold text-lg">Tasa de abandono de carrito</p>
+                        <p class="mt-1 text-sm text-white/60">Antes del rediseño</p>
+                    </div>
+                    <div class="fade-in">
+                        <p class="text-6xl font-black">15</p>
+                        <p class="mt-2 text-primary-foreground/80 font-semibold text-lg">Usuarios entrevistados</p>
+                        <p class="mt-1 text-sm text-white/60">Investigación cualitativa</p>
+                    </div>
+                    <div class="fade-in">
+                        <p class="text-6xl font-black">3</p>
+                        <p class="mt-2 text-primary-foreground/80 font-semibold text-lg">Pasos propuestos en checkout</p>
+                        <p class="mt-1 text-sm text-white/60">Solución simplificada</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══════════════════ 02 · INVESTIGACIÓN ══════════════════ -->
+        <section class="bg-white py-24" id="investigacion">
+            <div class="mx-auto max-w-7xl px-6 lg:px-12">
+                <div class="text-center mb-16 fade-in">
+                    <span class="inline-block rounded-full bg-blue-100 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-blue-600 mb-6">02 — Definir</span>
+                    <h2 class="text-4xl font-black text-slate-900">Investigación y hallazgos</h2>
+                    <p class="mt-4 max-w-xl mx-auto text-slate-500 leading-relaxed">Se combinaron métodos cualitativos y cuantitativos para obtener una visión completa del comportamiento del usuario.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                    <!-- Method 1 -->
+                    <div class="fade-in rounded-3xl border border-slate-200 p-8 hover:border-primary/40 hover:shadow-lg transition-all duration-300">
+                        <div class="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-primary text-2xl">record_voice_over</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Entrevistas en profundidad</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-4">Se realizaron 15 entrevistas semiestructuradas con usuarios frecuentes de tiendas de mascotas online (30–45 min cada una).</p>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span>Frustración al no saber el paso en que se encontraban</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span>Desconfianza ante la ausencia de confirmación de pago</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span>Dificultad para filtrar productos por tipo de mascota</li>
+                        </ul>
+                    </div>
+                    <!-- Method 2 -->
+                    <div class="fade-in rounded-3xl border border-slate-200 p-8 hover:border-primary/40 hover:shadow-lg transition-all duration-300">
+                        <div class="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-primary text-2xl">analytics</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Auditoría heurística</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-4">Evaluación del sitio existente aplicando las 10 heurísticas de Nielsen para identificar problemas de usabilidad sistémicos.</p>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span>Ausencia de feedback del sistema (sin confirmaciones)</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span>Inconsistencia en botones y etiquetas de acción</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span>Baja visibilidad del estado del sistema en checkout</li>
+                        </ul>
+                    </div>
+                    <!-- Method 3 -->
+                    <div class="fade-in rounded-3xl border border-slate-200 p-8 hover:border-primary/40 hover:shadow-lg transition-all duration-300">
+                        <div class="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-primary text-2xl">manage_search</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Benchmarking competitivo</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-4">Análisis de referentes como PetSmart, Chewy y tiendas locales para identificar mejores prácticas del sector.</p>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span>Los líderes usan checkout de 1 o 3 pasos claros</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span>Filtrado por tipo de mascota es estándar en el sector</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span>Chat en vivo reduce el abandono de consultas</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- User persona -->
+                <div class="fade-in rounded-3xl overflow-hidden border border-slate-200 shadow-sm">
+                    <div class="bg-slate-900 px-8 py-5 flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary">person</span>
+                        <h3 class="text-white font-bold text-lg">User Persona principal</h3>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-slate-200">
+                        <div class="p-8">
+                            <div class="flex items-center gap-4 mb-5">
+                                <div class="h-16 w-16 rounded-full bg-gradient-to-br from-orange-300 to-orange-500 flex items-center justify-center text-white font-black text-2xl flex-shrink-0">
+                                    M
+                                </div>
+                                <div>
+                                    <p class="font-black text-xl text-slate-900">Martina, 32</p>
+                                    <p class="text-slate-500 text-sm">Mamá de 2 mascotas · Colombia</p>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed italic border-l-2 border-primary pl-4">
+                                "Compro todo online pero me da miedo cuando no sé si mi pago se procesó bien. Si no veo confirmación, cancelo todo."
+                            </p>
+                        </div>
+                        <div class="p-8">
+                            <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary text-base">sentiment_very_dissatisfied</span>Frustraciones
+                            </h4>
+                            <ul class="space-y-3 text-sm text-slate-600">
+                                <li class="flex gap-2"><span class="text-red-400 font-bold">✗</span>No sabe cuántos pasos faltan en el checkout</li>
+                                <li class="flex gap-2"><span class="text-red-400 font-bold">✗</span>No recibe respuesta a sus consultas enviadas</li>
+                                <li class="flex gap-2"><span class="text-red-400 font-bold">✗</span>Le cuesta encontrar productos por tipo de mascota</li>
+                                <li class="flex gap-2"><span class="text-red-400 font-bold">✗</span>La interfaz no es clara en mobile</li>
+                            </ul>
+                        </div>
+                        <div class="p-8">
+                            <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary text-base">emoji_objects</span>Necesidades
+                            </h4>
+                            <ul class="space-y-3 text-sm text-slate-600">
+                                <li class="flex gap-2"><span class="text-green-500 font-bold">✓</span>Ver claramente en qué paso está del proceso</li>
+                                <li class="flex gap-2"><span class="text-green-500 font-bold">✓</span>Recibir confirmación inmediata de su compra</li>
+                                <li class="flex gap-2"><span class="text-green-500 font-bold">✓</span>Filtrar productos fácilmente para su mascota</li>
+                                <li class="flex gap-2"><span class="text-green-500 font-bold">✓</span>Saber cuándo recibirá respuesta a su consulta</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════ 03 · IDEACIÓN ══════════════════ -->
+        <section class="mx-auto max-w-7xl px-6 py-24 lg:px-12" id="ideacion">
+            <div class="text-center mb-16 fade-in">
+                <span class="inline-block rounded-full bg-purple-100 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-purple-600 mb-6">03 — Idear</span>
+                <h2 class="text-4xl font-black text-slate-900">Definición de la solución</h2>
+                <p class="mt-4 max-w-xl mx-auto text-slate-500 leading-relaxed">A partir de los hallazgos, se definieron los principios de diseño que guiarían la solución.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+                <div class="fade-in rounded-3xl bg-gradient-to-br from-primary to-blue-700 p-8 text-white">
+                    <span class="material-symbols-outlined text-white/60 text-5xl mb-4">route</span>
+                    <h3 class="text-2xl font-black mb-3">HMW #1</h3>
+                    <p class="text-white/90 text-lg leading-relaxed">¿Cómo podríamos hacer que el usuario <strong>siempre sepa en qué punto del proceso</strong> se encuentra, sin generar ansiedad?</p>
+                </div>
+                <div class="fade-in rounded-3xl bg-gradient-to-br from-slate-800 to-slate-900 p-8 text-white">
+                    <span class="material-symbols-outlined text-white/60 text-5xl mb-4">mark_email_unread</span>
+                    <h3 class="text-2xl font-black mb-3">HMW #2</h3>
+                    <p class="text-white/90 text-lg leading-relaxed">¿Cómo podríamos <strong>dar trazabilidad y confianza</strong> al usuario después de enviar una consulta o completar una compra?</p>
+                </div>
+            </div>
+
+            <!-- Process steps -->
+            <div class="relative grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="fade-in step-line relative text-center">
+                    <div class="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary text-xl font-black border-2 border-primary/20">
+                        1
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-2">Crazy 8's</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">Generación rápida de ideas para los flujos de checkout y contacto. Se exploraron 8 variantes en 8 minutos.</p>
+                </div>
+                <div class="fade-in step-line relative text-center">
+                    <div class="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary text-xl font-black border-2 border-primary/20">
+                        2
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-2">Wireframes Lo-Fi</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">Bocetos a mano y wireframes digitales en Figma para validar estructura y flujos antes de invertir en diseño visual.</p>
+                </div>
+                <div class="fade-in relative text-center">
+                    <div class="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary text-xl font-black border-2 border-primary/20">
+                        3
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-2">Prototipo Hi-Fi</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">Diseño de alta fidelidad con el sistema de diseño de PetMarket, listo para pruebas de usabilidad.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════ 04 · SOLUCIÓN ══════════════════ -->
+        <section class="bg-white py-24" id="solucion">
+            <div class="mx-auto max-w-7xl px-6 lg:px-12">
+                <div class="text-center mb-16 fade-in">
+                    <span class="inline-block rounded-full bg-green-100 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-green-600 mb-6">04 — Prototipar</span>
+                    <h2 class="text-4xl font-black text-slate-900">La solución de diseño</h2>
+                    <p class="mt-4 max-w-xl mx-auto text-slate-500 leading-relaxed">Tres intervenciones clave que abordan directamente los puntos de dolor detectados en la investigación.</p>
+                </div>
+
+                <div class="space-y-12">
+                    <!-- Solution 1 -->
+                    <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-10 items-center rounded-3xl border border-slate-200 p-8 lg:p-12 hover:shadow-lg transition-shadow duration-300">
+                        <div>
+                            <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-secondary text-white font-black mb-5">1</span>
+                            <h3 class="text-2xl font-black text-slate-900 mb-4">Checkout simplificado en 3 pasos</h3>
+                            <p class="text-slate-600 leading-relaxed mb-6">Se rediseñó el flujo de pago reduciendo los pasos innecesarios y agregando una barra de progreso visual persistente. El usuario siempre sabe dónde está y cuánto le falta.</p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3 text-sm text-slate-600">
+                                    <span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+                                    <span><strong>Paso 1 — Carrito</strong>: Resumen claro con edición inline</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-slate-600">
+                                    <span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+                                    <span><strong>Paso 2 — Envío y pago</strong>: Formulario limpio con autocompletado</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-slate-600">
+                                    <span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+                                    <span><strong>Paso 3 — Confirmación</strong>: Pantalla de éxito con número de orden y tiempo de entrega</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 flex flex-col items-center justify-center p-10 min-h-[280px] gap-4">
+                            <div class="flex w-full items-center justify-between gap-2">
+                                <div class="flex-1 rounded-full h-2 bg-primary"></div>
+                                <div class="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-white text-xs font-bold">1</div>
+                                <div class="flex-1 rounded-full h-2 bg-primary"></div>
+                                <div class="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-white text-xs font-bold">2</div>
+                                <div class="flex-1 rounded-full h-2 bg-slate-200"></div>
+                                <div class="h-8 w-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-400 text-xs font-bold">3</div>
+                            </div>
+                            <p class="text-xs text-slate-500 font-semibold uppercase tracking-wide">Indicador de progreso – paso 2 de 3</p>
+                            <span class="material-symbols-outlined text-primary/30 text-8xl">local_shipping</span>
+                        </div>
+                    </div>
+
+                    <!-- Solution 2 -->
+                    <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-10 items-center rounded-3xl border border-slate-200 p-8 lg:p-12 hover:shadow-lg transition-shadow duration-300">
+                        <div class="order-2 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 flex flex-col items-center justify-center p-10 min-h-[280px] gap-4 text-white">
+                            <span class="material-symbols-outlined text-white/20 text-8xl">mark_email_read</span>
+                            <div class="text-center">
+                                <p class="font-bold text-lg">¡Consulta recibida!</p>
+                                <p class="text-sm text-white/60 mt-1">Responderemos en menos de 24 hs. <br>Número de caso: #00123</p>
+                            </div>
+                        </div>
+                        <div class="order-1">
+                            <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-secondary text-white font-black mb-5">2</span>
+                            <h3 class="text-2xl font-black text-slate-900 mb-4">Sistema de trazabilidad de consultas</h3>
+                            <p class="text-slate-600 leading-relaxed mb-6">Se rediseñó el formulario de contacto para entregar confirmación inmediata, asignar un número de caso y comunicar el tiempo estimado de respuesta.</p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3 text-sm text-slate-600">
+                                    <span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+                                    <span><strong>Confirmación automática</strong> por email al enviar</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-slate-600">
+                                    <span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+                                    <span><strong>Número de caso</strong> para seguimiento desde el sitio</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-slate-600">
+                                    <span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+                                    <span><strong>Tiempo estimado de respuesta</strong> visible en pantalla</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Solution 3 -->
+                    <div class="fade-in grid grid-cols-1 lg:grid-cols-2 gap-10 items-center rounded-3xl border border-slate-200 p-8 lg:p-12 hover:shadow-lg transition-shadow duration-300">
+                        <div>
+                            <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-secondary text-white font-black mb-5">3</span>
+                            <h3 class="text-2xl font-black text-slate-900 mb-4">Jerarquía visual y navegación por mascota</h3>
+                            <p class="text-slate-600 leading-relaxed mb-6">Se replanteó la arquitectura de información del catálogo para permitir filtrado por tipo de mascota desde la navegación principal, reduciendo la carga cognitiva.</p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3 text-sm text-slate-600">
+                                    <span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+                                    <span><strong>Filtros primarios</strong>: Perro · Gato · Ave · Pez · Otros</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-slate-600">
+                                    <span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+                                    <span><strong>CTAs rediseñados</strong> con mayor contraste y especificidad</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-slate-600">
+                                    <span class="material-symbols-outlined text-primary text-base mt-0.5">check_circle</span>
+                                    <span><strong>Tipografía y espaciado</strong> revisados para mobile-first</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rounded-2xl bg-gradient-to-br from-orange-50 to-amber-50 flex flex-col items-center justify-center p-10 min-h-[280px] gap-4">
+                            <div class="flex gap-3 flex-wrap justify-center">
+                                <div class="rounded-2xl bg-gradient-to-r from-primary to-secondary text-white font-bold text-sm px-5 py-3 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-base">pets</span>Perro
+                                </div>
+                                <div class="rounded-2xl bg-white border border-slate-200 text-slate-700 font-bold text-sm px-5 py-3 flex items-center gap-2 shadow-sm">
+                                    <span class="material-symbols-outlined text-base text-primary">cruelty_free</span>Gato
+                                </div>
+                                <div class="rounded-2xl bg-white border border-slate-200 text-slate-700 font-bold text-sm px-5 py-3 flex items-center gap-2 shadow-sm">
+                                    <span class="material-symbols-outlined text-base text-primary">set_meal</span>Pez
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-500 font-semibold uppercase tracking-wide mt-2">Filtro por tipo de mascota</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════ 05 · RESULTADOS ══════════════════ -->
+        <section class="mx-auto max-w-7xl px-6 py-24 lg:px-12" id="resultados">
+            <div class="text-center mb-16 fade-in">
+                <span class="inline-block rounded-full bg-emerald-100 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-emerald-600 mb-6">05 — Evaluar</span>
+                <h2 class="text-4xl font-black text-slate-900">Resultados y aprendizajes</h2>
+                <p class="mt-4 max-w-xl mx-auto text-slate-500 leading-relaxed">Tras las pruebas de usabilidad con 8 participantes se obtuvieron los siguientes resultados con el prototipo de alta fidelidad.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <div class="fade-in rounded-3xl bg-gradient-to-br from-emerald-50 to-green-50 border border-emerald-100 p-8 text-center">
+                    <p class="text-5xl font-black text-emerald-600">↓40%</p>
+                    <p class="mt-3 font-bold text-slate-900">Reducción del tiempo de checkout</p>
+                    <p class="mt-1 text-xs text-slate-500">Promedio tareas observadas</p>
+                </div>
+                <div class="fade-in rounded-3xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 p-8 text-center">
+                    <p class="text-5xl font-black text-blue-600">87%</p>
+                    <p class="mt-3 font-bold text-slate-900">Tasa de éxito en el checkout</p>
+                    <p class="mt-1 text-xs text-slate-500">Test de usabilidad Hi-Fi</p>
+                </div>
+                <div class="fade-in rounded-3xl bg-gradient-to-br from-purple-50 to-violet-50 border border-purple-100 p-8 text-center">
+                    <p class="text-5xl font-black text-purple-600">4.6/5</p>
+                    <p class="mt-3 font-bold text-slate-900">Satisfacción del usuario</p>
+                    <p class="mt-1 text-xs text-slate-500">Escala SUS adaptada</p>
+                </div>
+                <div class="fade-in rounded-3xl bg-gradient-to-br from-orange-50 to-amber-50 border border-orange-100 p-8 text-center">
+                    <p class="text-5xl font-black text-orange-500">100%</p>
+                    <p class="mt-3 font-bold text-slate-900">Entendió la confirmación</p>
+                    <p class="mt-1 text-xs text-slate-500">Trazabilidad de consultas</p>
+                </div>
+            </div>
+
+            <!-- Learnings -->
+            <div class="fade-in rounded-3xl bg-slate-900 p-10 lg:p-14 text-white">
+                <h3 class="text-2xl font-black mb-8 text-center">Aprendizajes clave</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="space-y-3">
+                        <div class="h-10 w-10 rounded-xl bg-primary/20 border border-primary/40 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary text-lg">lightbulb</span>
+                        </div>
+                        <h4 class="font-bold">La visibilidad del sistema es crítica</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Mostrar al usuario en qué punto está del proceso no es un detalle cosmético: es una necesidad fundamental que impacta directamente en la confianza y la completitud de la tarea.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="h-10 w-10 rounded-xl bg-primary/20 border border-primary/40 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary text-lg">architecture</span>
+                        </div>
+                        <h4 class="font-bold">Menos pasos ≠ siempre mejor</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Reducir pasos sin aclarar qué contiene cada uno puede generar más confusión. La clave es que cada paso tenga un propósito claro y comunicado explícitamente.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="h-10 w-10 rounded-xl bg-primary/20 border border-primary/40 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary text-lg">feedback</span>
+                        </div>
+                        <h4 class="font-bold">El feedback post-acción genera confianza</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed">Una pantalla de confirmación bien diseñada, con número de orden y tiempo estimado, transformó la percepción de seguridad del usuario de manera instantánea.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════ CTA FINAL ══════════════════ -->
+        <section class="bg-white border-t border-slate-200 py-20">
+            <div class="mx-auto max-w-3xl px-6 text-center">
+                <h2 class="text-3xl font-black text-slate-900 mb-4">¿Tienes un proyecto en mente?</h2>
+                <p class="text-slate-500 leading-relaxed mb-8">Me encantaría escuchar tus desafíos y trabajar juntos para encontrar la mejor solución centrada en el usuario.</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="index.html#contacto" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-secondary px-8 py-4 font-bold text-white transition-all hover:translate-y-[-2px] hover:shadow-xl hover:shadow-primary/25">
+                        Hablemos <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                    <a href="index.html#proyectos" class="inline-flex items-center gap-2 rounded-full border-2 border-slate-200 px-8 py-4 font-bold text-slate-900 transition-all hover:bg-slate-50">
+                        Ver más proyectos
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-8 text-center text-slate-400 text-xs border-t border-slate-100">
+        © 2026 Daniela Jaimes · Diseñadora UX/UI
+    </footer>
+
+    <!-- Scroll animations -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>

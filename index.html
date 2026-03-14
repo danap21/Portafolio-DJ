@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+
+<html lang="es" class="dark">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Daniela Jaimes | Diseñadora UX/UI Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6",
+                        "secondary": "#8B5CF6",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#0F172A",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar for Project Cards */
+        .scrolling-card::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .scrolling-card::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .scrolling-card::-webkit-scrollbar-thumb {
+            background-color: rgba(148, 163, 184, 0.4);
+            border-radius: 20px;
+        }
+
+        .dark .scrolling-card::-webkit-scrollbar-thumb {
+            background-color: rgba(71, 85, 105, 0.6);
+        }
+
+        /* Back to Top Button Styles */
+        #back-to-top {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        #back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div class="relative flex min-h-screen flex-col overflow-x-hidden">
+        <!-- Navigation -->
+        <header
+            class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+            <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-12">
+                <button onclick="sharePortfolio()"
+                    class="flex items-center gap-2 text-primary hover:opacity-80 transition-opacity"
+                    title="Compartir Portafolio">
+                    <span class="material-symbols-outlined text-3xl font-bold">polyline</span>
+                    <h2 class="text-xl font-black tracking-tight text-slate-900 dark:text-white">Daniela Jaimes</h2>
+                </button>
+                <nav class="hidden md:flex items-center gap-6 lg:gap-8">
+                    <a class="text-sm font-semibold hover:text-primary transition-colors"
+                        href="#proyectos">Proyectos</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="#sobre-mi">Sobre mí</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors"
+                        href="#habilidades">Habilidades</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="#contacto">Contacto</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="prompts.html">Prompts</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="imagenes.html">Imágenes</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <a href="cv - daniela jaimes.pdf" download
+                        class="flex items-center justify-center rounded-lg bg-gradient-to-r from-primary to-secondary px-5 py-2.5 text-sm font-bold text-white transition-all hover:opacity-90 hover:shadow-lg hover:shadow-primary/20">
+                        <span>Descargar CV</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <main class="flex-grow">
+            <!-- Hero Section -->
+            <section class="mx-auto max-w-7xl px-6 py-16 lg:px-12 lg:py-24">
+                <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+                    <div class="flex flex-col gap-8">
+                        <div class="space-y-4">
+                            <span
+                                class="inline-block rounded-full bg-secondary/10 px-4 py-1 text-xs font-bold uppercase tracking-widest text-secondary">
+                                Diseñadora UX/UI
+                            </span>
+                            <h1
+                                class="text-5xl font-black leading-tight tracking-tight text-slate-900 dark:text-white lg:text-5xl">
+                                Diseño experiencias digitales centradas en las personas.
+                            </h1>
+                            <p class="max-w-xl text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+                                Diseñadora UX/UI en formación, actualmente cursando un diplomado en Diseño UX/UI. Cuento
+                                con una sólida base en análisis de requerimientos, documentación y resolución de
+                                problemas complejos gracias a más de 10 años de experiencia en ingeniería.
+                                Busco mi primera oportunidad profesional en UX/UI para seguir aprendiendo, aportar
+                                pensamiento analítico y crecer dentro de un equipo de diseño centrado en el usuario.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-4">
+                            <a class="inline-flex h-14 items-center justify-center rounded-xl bg-gradient-to-r from-primary to-secondary px-8 text-base font-bold text-white transition-all hover:translate-y-[-2px] hover:shadow-xl hover:shadow-primary/25"
+                                href="#proyectos">
+                                Ver proyectos
+                            </a>
+                            <a class="inline-flex h-14 items-center justify-center rounded-xl border-2 border-slate-200 dark:border-slate-800 px-8 text-base font-bold text-slate-900 dark:text-white transition-all hover:bg-slate-50 dark:hover:bg-slate-900"
+                                href="#contacto">
+                                Contactar
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div
+                            class="aspect-square w-full overflow-hidden rounded-3xl bg-slate-200 dark:bg-slate-800 shadow-2xl">
+                            <img alt="Daniela Jaimes Profile"
+                                class="h-full w-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                                data-alt="Professional portrait of Daniela Jaimes, UX Designer"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXCIKEzf4GsjsMQQwnYwxoGeDoszaC9LLPYnF2hjsGYfVEplzKSrHnOdmfS6KjYZuOEcul8MgFTRWs6JcdPIJARI_HdbuwEIcqrXQUHGT0-XrQQptp7D8ZdP7lC6m-FH2TxrCnB9UUt-XKbybld7asx4EfOjw5RedNn8xngIKfvIZ9liAnxQomE7OsxmZK8BQq0sYLFcOsmXSuOtrlXEcXE3am4NIZPgvvdcMU8TaikUny9nN3yzFYNcyg994E-rCNTfjSKK6gsKaH" />
+                        </div>
+                        <div
+                            class="absolute -bottom-6 -left-6 rounded-2xl bg-white dark:bg-slate-900 p-6 shadow-xl border border-slate-100 dark:border-slate-800">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                                    <span class="material-symbols-outlined">analytics</span>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-slate-900 dark:text-white">Basado en Datos</p>
+                                    <p class="text-xs text-slate-500">Decisiones informadas</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Combined About Section -->
+            <section class="bg-white dark:bg-slate-900/50 pt-12 pb-24" id="sobre-mi">
+                <div class="mx-auto max-w-7xl px-6 lg:px-12">
+
+                    <div class="mb-4 pl-1">
+                        <h2 class="text-sm font-bold uppercase tracking-widest text-primary mb-2">Sobre mí</h2>
+                        <h3 class="text-4xl font-black text-slate-900 dark:text-white mb-2">De la ingeniería eléctrica
+                            al diseño UX/UI.</h3>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-20">
+
+                        <!-- Text Content -->
+                        <div class="space-y-3 text-lg text-slate-600 dark:text-slate-400">
+                            <p>
+                                Soy una apasionada por entender cómo piensan y actúan las personas. Mi transición hacia
+                                el diseño UX/UI nació de la necesidad de crear soluciones que no solo se vean bien, sino
+                                que realmente funcionen y faciliten la vida de quienes las usan.
+                            </p>
+                            <p>
+                                Con formación en ingeniería eléctrica y más de 10 años de experiencia, destaco por
+                                traducir problemas complejos en experiencias digitales claras y estructuradas,
+                                combinando pensamiento analítico, enfoque sistémico y empatía por el usuario.
+                            </p>
+                            <p>
+                                Constantemente busco aprender nuevas metodologías, tecnologías y tendencias para
+                                asegurar que cada producto que diseño esté a la vanguardia estética y funcional. Dale
+                                play al video para conocerme un poco más.
+                            </p>
+
+                            <div class="pt-4">
+                                <a href="index.html#contacto"
+                                    class="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-bold text-white transition-all hover:translate-y-[-2px] hover:shadow-lg hover:shadow-primary/25">
+                                    Conectemos <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Video Container -->
+                        <div
+                            class="relative w-full rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800/80 p-8 min-h-[400px] lg:min-h-[500px] flex items-center justify-center border border-slate-200 dark:border-slate-800 shadow-sm group">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent"></div>
+
+                            <!-- Video Wrapper -->
+                            <div
+                                class="relative w-full max-w-lg mx-auto rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-700 bg-slate-900 z-10 transition-transform duration-500 group-hover:scale-[1.02]">
+
+                                <video class="w-full h-auto block" controls preload="metadata">
+                                    <source src="Proceso.mp4" type="video/mp4">
+                                    Tu navegador no soporta el reproductor de video.
+                                </video>
+
+                            </div>
+
+                            <!-- Decorative elements -->
+                            <div
+                                class="absolute top-10 right-10 h-32 w-32 rounded-full bg-primary/10 blur-3xl mix-blend-multiply dark:mix-blend-screen">
+                            </div>
+                            <div
+                                class="absolute bottom-10 left-10 h-40 w-40 rounded-full bg-blue-400/10 blur-3xl mix-blend-multiply dark:mix-blend-screen">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Interactive Image Carousel -->
+                <div class="mt-20 relative group/carousel">
+                    <div class="mb-10 text-center">
+                        <h4 class="text-2xl font-black text-slate-900 dark:text-white mb-2">Mi Proceso Creativo</h4>
+                        <p class="text-slate-500">Un vistazo a mis metodologías y herramientas en acción.</p>
+                    </div>
+
+                    <!-- Carousel Wrapper -->
+                    <div
+                        class="relative overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 shadow-xl max-w-4xl mx-auto">
+                        <div id="carousel-container"
+                            class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar"
+                            style="scrollbar-width: none; -ms-overflow-style: none;">
+                            <!-- Slide 1 -->
+                            <div class="flex-none w-full snap-start p-4 md:p-8">
+                                <div
+                                    class="relative aspect-[16/9] w-full rounded-2xl overflow-hidden shadow-lg border border-white/10">
+                                    <img src="images/Imagen 1.png" alt="Proceso 1" class="w-full h-full object-cover">
+                                    <div
+                                        class="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white">
+                                        <p class="font-bold text-lg">Investigación y Análisis</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="flex-none w-full snap-start p-4 md:p-8">
+                                <div
+                                    class="relative aspect-[16/9] w-full rounded-2xl overflow-hidden shadow-lg border border-white/10">
+                                    <img src="images/Imagen 2.png" alt="Proceso 2" class="w-full h-full object-cover">
+                                    <div
+                                        class="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white">
+                                        <p class="font-bold text-lg">Ideación y Wireframing</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="flex-none w-full snap-start p-4 md:p-8">
+                                <div
+                                    class="relative aspect-[16/9] w-full rounded-2xl overflow-hidden shadow-lg border border-white/10">
+                                    <img src="images/Imagen 3.png" alt="Proceso 3" class="w-full h-full object-cover">
+                                    <div
+                                        class="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white">
+                                        <p class="font-bold text-lg">Diseño de Alta Fidelidad</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Buttons -->
+                        <button onclick="scrollCarousel(-1)"
+                            class="absolute left-4 top-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20 shadow-lg hover:bg-white/20 transition-all z-10 opacity-0 group-hover/carousel:opacity-100">
+                            <span class="material-symbols-outlined">chevron_left</span>
+                        </button>
+                        <button onclick="scrollCarousel(1)"
+                            class="absolute right-4 top-1/2 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20 shadow-lg hover:bg-white/20 transition-all z-10 opacity-0 group-hover/carousel:opacity-100">
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </button>
+                    </div>
+
+                    <!-- Carousel Indicators -->
+                    <div class="flex justify-center gap-3 mt-8">
+                        <button onclick="goToSlide(0)"
+                            class="carousel-dot h-2 w-8 rounded-full bg-primary/20 transition-all hover:bg-primary"></button>
+                        <button onclick="goToSlide(1)"
+                            class="carousel-dot h-2 w-8 rounded-full bg-primary/20 transition-all hover:bg-primary"></button>
+                        <button onclick="goToSlide(2)"
+                            class="carousel-dot h-2 w-8 rounded-full bg-primary/20 transition-all hover:bg-primary"></button>
+                    </div>
+                </div>
+
+    </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="mx-auto max-w-7xl px-6 py-24 lg:px-12" id="proyectos">
+        <div class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+                <h2 class="text-sm font-bold uppercase tracking-widest text-primary mb-4">Portafolio</h2>
+                <h3 class="text-4xl font-black text-slate-900 dark:text-white">Proyectos Destacados</h3>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 gap-12">
+            <!-- Project Card 1 -->
+            <div
+                class="group grid grid-cols-1 overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 lg:grid-cols-2">
+                <div class="relative overflow-hidden min-h-[420px] lg:min-h-0" style="background-color: #f0e8dc;">
+                    <img alt="PetMarket Case Study"
+                        class="absolute inset-0 h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-105"
+                        data-alt="PetMarket ecommerce mobile application design showcase"
+                        src="images/petmarket-cover.jpg" />
+                </div>
+                <div class="flex flex-col justify-center p-8 lg:p-16">
+                    <div class="mb-6 flex gap-2">
+                        <span
+                            class="rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs font-semibold">E-commerce</span>
+                        <span class="rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs font-semibold">UX
+                            Research</span>
+                    </div>
+                    <h4 class="mb-4 text-3xl font-black text-slate-900 dark:text-white">PetMarket: Rediseño
+                        Ecommerce</h4>
+                    <div class="mb-8 space-y-4">
+                        <p class="text-slate-600 dark:text-slate-400"><strong>El Problema:</strong> Los usuarios
+                            de PetMarket experimentan fricción tanto en el proceso de compra como en el flujo de
+                            consulta, ya que el checkout puede generar incertidumbre por la falta de orientación
+                            clara, mientras que el formulario de contacto carece de trazabilidad, no informa
+                            tiempos estimados de respuesta ni ofrece seguimiento dentro del sistema, debido a la
+                            falta de jerarquía visual, orientación en el flujo y procesos digitales claros, lo
+                            que provoca abandono y confusión.
+                        </p>
+                        <p class="text-slate-600 dark:text-slate-400"><strong>Investigación:</strong>
+                            Entrevistas con 15 usuarios frecuentes revelaron procesos de checkout confusos.</p>
+                        <p class="text-slate-600 dark:text-slate-400"><strong>Solución:</strong> Desde una
+                            perspectiva de UX, optimizar estos flujos resulta clave para reducir la carga
+                            cognitiva, mejorar la comprensión de los pasos a seguir y brindar mayor seguridad
+                            durante la interacción.</p>
+                    </div>
+                    <a href="petmarket-case-study.html"
+                        class="inline-flex items-center gap-2 font-bold text-primary hover:gap-3 transition-all">
+                        Ver Caso de Estudio <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Project Card 2 (Mini Grid) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div
+                    class="rounded-3xl border border-slate-200 dark:border-slate-800 p-8 bg-white dark:bg-slate-900 group">
+                    <div
+                        class="relative mb-6 h-56 w-full rounded-2xl overflow-y-auto overflow-x-hidden scrolling-card border border-slate-100 dark:border-slate-800">
+                        <img src="images/pupsy-cover.png" alt="Pupsy Identidad de Marca" class="w-full h-auto block" />
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Pupsy Identidad de Marca</h4>
+                    <p class="text-slate-500 mb-6 text-sm">Pupsy es una marca de indumentaria, accesoriosy
+                        guardería para perros y gatos, pensada para el bienestar diariode nuestroas peluditos.
+                    </p>
+                    <button class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                        Próximamente <span class="material-symbols-outlined text-sm">lock</span>
+                    </button>
+                </div>
+                <div
+                    class="rounded-3xl border border-slate-200 dark:border-slate-800 p-8 bg-white dark:bg-slate-900 group">
+                    <div
+                        class="relative mb-6 h-56 w-full rounded-2xl overflow-y-auto overflow-x-hidden bg-slate-100 dark:bg-slate-800 scrolling-card border border-slate-200 dark:border-slate-700">
+                        <img src="images/financially-cover.png" alt="Financially App" class="w-full h-auto block" />
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">PetSo App</h4>
+                    <p class="text-slate-500 mb-6 text-sm">App diseñada para centralizar información verificada
+                        sobre espacios petfriendly, mejorando la experiencia de los dueños de mascotas.</p>
+                    <a href="petso-case-study.html"
+                        class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                        Ver Caso de Estudio <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Skills & Process -->
+    <section class="bg-slate-50 dark:bg-slate-900 py-24" id="habilidades">
+        <div class="mx-auto max-w-7xl px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold uppercase tracking-widest text-primary mb-4">Habilidades</h2>
+                <h3 class="text-4xl font-black text-slate-900 dark:text-white">Mi proceso de diseño</h3>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div
+                        class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-white dark:bg-slate-800 shadow-sm">
+                        <span class="material-symbols-outlined text-primary text-3xl">search</span>
+                    </div>
+                    <h5 class="font-bold">Investigación</h5>
+                    <p class="text-xs text-slate-500 mt-2 px-4">Entrevistas, encuestas y auditoría competitiva.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div
+                        class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-white dark:bg-slate-800 shadow-sm">
+                        <span class="material-symbols-outlined text-primary text-3xl">map</span>
+                    </div>
+                    <h5 class="font-bold">Estrategia</h5>
+                    <p class="text-xs text-slate-500 mt-2 px-4">User personas, Journey maps y arquitectura de
+                        información.</p>
+                </div>
+                <div class="text-center">
+                    <div
+                        class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-white dark:bg-slate-800 shadow-sm">
+                        <span class="material-symbols-outlined text-primary text-3xl">draw</span>
+                    </div>
+                    <h5 class="font-bold">Ideación</h5>
+                    <p class="text-xs text-slate-500 mt-2 px-4">Wireframing, prototipado de baja y alta
+                        fidelidad.</p>
+                </div>
+                <div class="text-center">
+                    <div
+                        class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-white dark:bg-slate-800 shadow-sm">
+                        <span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+                    </div>
+                    <h5 class="font-bold">Validación</h5>
+                    <p class="text-xs text-slate-500 mt-2 px-4">Test de usabilidad y métricas de rendimiento.
+                    </p>
+                </div>
+            </div>
+            <!-- Toolbox -->
+            <div class="mt-24 rounded-3xl bg-gradient-to-br from-primary to-secondary p-12 text-white shadow-xl">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                    <div>
+                        <h4 class="text-3xl font-black mb-4">Toolbox</h4>
+                        <p class="text-primary-foreground/80 max-w-sm">Las herramientas que utilizo diariamente
+                            para dar vida a mis ideas y colaborar con equipos.</p>
+                    </div>
+                    <div class="flex flex-wrap justify-center gap-10">
+                        <div class="flex flex-col items-center gap-2">
+                            <div
+                                class="h-16 w-16 rounded-2xl bg-white flex items-center justify-center shadow-lg transition-transform hover:scale-110 p-2.5">
+                                <img alt="Figma" class="h-full w-full object-contain rounded-lg"
+                                    data-alt="Figma logo icon" src="images/figma.png" />
+                            </div>
+                            <span class="text-xs font-semibold text-white/90">Figma</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <div
+                                class="h-16 w-16 rounded-2xl bg-white flex items-center justify-center shadow-lg transition-transform hover:scale-110 p-2.5">
+                                <img alt="Illustrator" class="h-full w-full object-contain rounded-lg"
+                                    data-alt="Adobe Illustrator logo icon" src="images/illustrator.png" />
+                            </div>
+                            <span class="text-xs font-semibold text-white/90">Illustrator</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <div
+                                class="h-16 w-16 rounded-2xl bg-white flex items-center justify-center shadow-lg transition-transform hover:scale-110 p-2.5">
+                                <img alt="Photoshop" class="h-full w-full object-contain rounded-lg"
+                                    data-alt="Adobe Photoshop logo icon" src="images/photoshop.png" />
+                            </div>
+                            <span class="text-xs font-semibold text-white/90">Photoshop</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <div
+                                class="h-16 w-16 rounded-2xl bg-white flex items-center justify-center shadow-lg transition-transform hover:scale-110 p-2.5">
+                                <img alt="FigJam" class="h-full w-full object-contain rounded-lg"
+                                    data-alt="Figjam logo icon" src="images/figjam.png" />
+                            </div>
+                            <span class="text-xs font-semibold text-white/90">FigJam</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="mx-auto max-w-7xl px-6 py-24 lg:px-12" id="contacto">
+        <div
+            class="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+
+                <!-- Left panel -->
+                <div class="bg-gradient-to-br from-primary to-secondary p-10 lg:p-14 flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-sm font-bold uppercase tracking-widest text-white/60 mb-4">Contacto</h2>
+                        <h3 class="text-4xl font-black text-white mb-6">¿Trabajamos<br>juntos?</h3>
+                        <p class="text-white/75 leading-relaxed">
+                            Estoy abierta a nuevas oportunidades y colaboraciones. Si tienes un problema que
+                            resolver o una idea que desarrollar, cuéntame.
+                        </p>
+                    </div>
+                    <div class="mt-12 space-y-5">
+                        <a href="mailto:jaimesdaniela.sam@gmail.com"
+                            class="flex items-center gap-4 text-white/80 hover:text-white transition-colors group">
+                            <div
+                                class="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-white/10 group-hover:bg-white/20 transition-colors">
+                                <span class="material-symbols-outlined text-xl">mail</span>
+                            </div>
+                            <span class="text-sm font-medium">jaimesdaniela.sam@gmail.com</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/daniela-jaimes-1936515b/" target="_blank"
+                            class="flex items-center gap-4 text-white/80 hover:text-white transition-colors group">
+                            <div
+                                class="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-white/10 group-hover:bg-white/20 transition-colors">
+                                <span class="material-symbols-outlined text-xl">share</span>
+                            </div>
+                            <span class="text-sm font-medium">LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right panel: Form -->
+                <div class="p-10 lg:p-14">
+                    <!-- Success message (hidden by default) -->
+                    <div id="form-success"
+                        class="hidden flex flex-col items-center justify-center h-full text-center gap-4 py-12">
+                        <div class="h-20 w-20 rounded-full bg-green-100 flex items-center justify-center mx-auto">
+                            <span class="material-symbols-outlined text-green-500 text-4xl">check_circle</span>
+                        </div>
+                        <h4 class="text-2xl font-black text-slate-900 dark:text-white">¡Mensaje enviado!</h4>
+                        <p class="text-slate-500 max-w-xs">Gracias por escribirme. Te respondo a la brevedad.
+                        </p>
+                        <button onclick="resetForm()"
+                            class="mt-4 text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all mx-auto">
+                            Enviar otro mensaje <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+
+                    <!-- Form -->
+                    <form id="contact-form" onsubmit="submitForm(event)" novalidate>
+                        <!-- FormSubmit hidden fields -->
+                        <input type="hidden" name="_to" value="jaimesdaniela.sam@gmail.com" />
+                        <input type="hidden" name="subject" id="form-subject-hidden"
+                            value="[Portafolio] Nuevo mensaje de contacto" />
+                        <input type="hidden" name="_template" value="table" />
+                        <input type="hidden" name="_captcha" value="false" />
+
+                        <h4 class="text-2xl font-black text-slate-900 dark:text-white mb-8">Envíame un mensaje
+                        </h4>
+
+                        <div class="space-y-5">
+                            <!-- Nombre -->
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2"
+                                    for="contact-name">
+                                    Nombre completo <span class="text-primary">*</span>
+                                </label>
+                                <input type="text" id="contact-name" name="name" required placeholder="Tu nombre"
+                                    class="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-3.5 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" />
+                            </div>
+                            <!-- Email -->
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2"
+                                    for="contact-email">
+                                    Email <span class="text-primary">*</span>
+                                </label>
+                                <input type="email" id="contact-email" name="email" required placeholder="tu@email.com"
+                                    class="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-3.5 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" />
+                            </div>
+                            <!-- Asunto -->
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2"
+                                    for="contact-subject">
+                                    Asunto
+                                </label>
+                                <input type="text" id="contact-subject" name="subject_text"
+                                    placeholder="¿De qué se trata?"
+                                    class="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-3.5 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" />
+                            </div>
+                            <!-- Mensaje -->
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2"
+                                    for="contact-message">
+                                    Mensaje <span class="text-primary">*</span>
+                                </label>
+                                <textarea id="contact-message" name="message" required rows="4"
+                                    placeholder="Cuéntame sobre tu proyecto o idea..."
+                                    class="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 px-4 py-3.5 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none"></textarea>
+                            </div>
+
+                            <!-- Error message -->
+                            <div id="form-error"
+                                class="hidden rounded-xl bg-red-50 border border-red-100 px-4 py-3 text-sm text-red-600 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-base">error</span>
+                                <span id="form-error-text">Hubo un error. Intenta de nuevo.</span>
+                            </div>
+
+                            <!-- Submit -->
+                            <button type="submit" id="submit-btn"
+                                class="w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary to-secondary px-6 py-4 font-bold text-white transition-all hover:opacity-90 hover:shadow-lg hover:shadow-primary/20 disabled:opacity-60 disabled:cursor-not-allowed">
+                                <span id="btn-label">Enviar mensaje</span>
+                                <span id="btn-icon" class="material-symbols-outlined">send</span>
+                                <svg id="btn-spinner" class="hidden animate-spin h-5 w-5 text-white"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                        stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer strip -->
+            <div
+                class="border-t border-slate-100 dark:border-slate-800 px-10 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+
+                <button onclick="sharePortfolio()"
+                    class="flex items-center gap-2 text-primary hover:opacity-80 transition-opacity"
+                    title="Compartir Portafolio">
+                    <span class="material-symbols-outlined font-bold">polyline</span>
+                    <span class="font-black text-slate-900 dark:text-white">Daniela Jaimes</span>
+                </button>
+
+                <p class="text-slate-500 text-sm">© 2025 · Diseñado con foco en el usuario</p>
+
+                <a href="cv - daniela jaimes.pdf" download
+                    class="text-sm font-bold text-primary flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">download</span> Descargar CV
+                </a>
+
+            </div>
+        </div>
+    </section>
+    </main>
+    <footer class="py-12 text-center text-slate-400 text-xs">
+        Hecho con dedicación por Daniela Jaimes.
+    </footer>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+        class="fixed bottom-8 right-8 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white shadow-lg transition-transform hover:scale-110 active:scale-95"
+        title="Volver arriba">
+        <span class="material-symbols-outlined">arrow_upward</span>
+    </button>
+
+    <script>
+        // Back to Top visibility logic
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 400) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        // Carousel Functions
+        const carouselContainer = document.getElementById('carousel-container');
+        const carouselDots = document.querySelectorAll('.carousel-dot');
+
+        function updateDots() {
+            const index = Math.round(carouselContainer.scrollLeft / carouselContainer.clientWidth);
+            carouselDots.forEach((dot, i) => {
+                dot.style.backgroundColor = i === index ? 'var(--primary-color, #3B82F6)' : '';
+                dot.style.opacity = i === index ? '1' : '0.2';
+            });
+        }
+
+        carouselContainer.addEventListener('scroll', updateDots);
+        // Initial call to set first dot
+        updateDots();
+
+        function scrollCarousel(direction) {
+            const scrollAmount = carouselContainer.clientWidth;
+            carouselContainer.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        function goToSlide(index) {
+            const scrollPos = index * carouselContainer.clientWidth;
+            carouselContainer.scrollTo({
+                left: scrollPos,
+                behavior: 'smooth'
+            });
+        }
+
+        async function submitForm(e) {
+            e.preventDefault();
+            const form = document.getElementById('contact-form');
+            const btn = document.getElementById('submit-btn');
+            const btnLabel = document.getElementById('btn-label');
+            const btnIcon = document.getElementById('btn-icon');
+            const btnSpinner = document.getElementById('btn-spinner');
+            const errorDiv = document.getElementById('form-error');
+            const errorText = document.getElementById('form-error-text');
+
+            const name = document.getElementById('contact-name').value.trim();
+            const email = document.getElementById('contact-email').value.trim();
+            const message = document.getElementById('contact-message').value.trim();
+            if (!name || !email || !message) {
+                errorText.textContent = 'Por favor completa los campos obligatorios (*)';
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+
+            const subject = document.getElementById('contact-subject').value.trim();
+            document.getElementById('form-subject-hidden').value =
+                subject ? `[Portafolio] ${subject}` : '[Portafolio] Nuevo mensaje de contacto';
+
+            btn.disabled = true;
+            btnLabel.textContent = 'Enviando...';
+            btnIcon.classList.add('hidden');
+            btnSpinner.classList.remove('hidden');
+            errorDiv.classList.add('hidden');
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch('https://formsubmit.co/ajax/jaimesdaniela.sam@gmail.com', {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: formData
+                });
+                const data = await response.json();
+                if (data.success) {
+                    form.classList.add('hidden');
+                    const success = document.getElementById('form-success');
+                    success.classList.remove('hidden');
+                    success.classList.add('flex');
+                } else {
+                    throw new Error(data.message || 'Error al enviar');
+                }
+            } catch (err) {
+                errorText.textContent = 'No se pudo enviar. Escríbeme directamente a jaimesdaniela.sam@gmail.com';
+                errorDiv.classList.remove('hidden');
+                btn.disabled = false;
+                btnLabel.textContent = 'Enviar mensaje';
+                btnIcon.classList.remove('hidden');
+                btnSpinner.classList.add('hidden');
+            }
+        }
+
+        function resetForm() {
+            const form = document.getElementById('contact-form');
+            const success = document.getElementById('form-success');
+            form.reset();
+            form.classList.remove('hidden');
+            success.classList.add('hidden');
+            success.classList.remove('flex');
+            document.getElementById('submit-btn').disabled = false;
+            document.getElementById('btn-label').textContent = 'Enviar mensaje';
+            document.getElementById('btn-icon').classList.remove('hidden');
+            document.getElementById('btn-spinner').classList.add('hidden');
+        }
+
+        async function sharePortfolio() {
+            const shareData = {
+                title: 'Daniela Jaimes | Portfolio UX/UI',
+                text: 'Echa un vistazo al portafolio de Daniela Jaimes, Diseñadora UX/UI.',
+                url: window.location.href
+            };
+            try {
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                } else {
+                    await navigator.clipboard.writeText(window.location.href);
+                    alert("¡Enlace del portafolio copiado al portapapeles!");
+                }
+            } catch (err) {
+                console.error('Error al compartir:', err);
+            }
+        }
+    </script>
+</body>
+
+</html>

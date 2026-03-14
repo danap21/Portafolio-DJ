@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Prompts | Daniela Jaimes - UX/UI</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6",
+                        "secondary": "#8B5CF6",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#0F172A",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div class="relative flex min-h-screen flex-col overflow-x-hidden">
+        <!-- Navigation -->
+        <header
+            class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+            <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-12">
+                <a href="index.html" class="flex items-center gap-2 text-primary hover:opacity-80 transition-opacity"
+                    title="Volver al inicio">
+                    <span class="material-symbols-outlined text-3xl font-bold">polyline</span>
+                    <h2 class="text-xl font-black tracking-tight text-slate-900 dark:text-white">Daniela Jaimes</h2>
+                </a>
+                <nav class="hidden md:flex items-center gap-6 lg:gap-8">
+                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="index.html#proyectos">Proyectos</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="index.html#sobre-mi">Sobre mí</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="index.html#habilidades">Habilidades</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="index.html#contacto">Contacto</a>
+                    <a class="text-sm font-semibold text-primary transition-colors border-b-2 border-primary" href="prompts.html">Prompts</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="index.html#imagenes">Imágenes</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <a href="cv - daniela jaimes.pdf" download
+                        class="flex items-center justify-center rounded-lg bg-gradient-to-r from-primary to-secondary px-5 py-2.5 text-sm font-bold text-white transition-all hover:opacity-90 hover:shadow-lg hover:shadow-primary/20">
+                        <span>Descargar CV</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow pt-16 pb-24">
+            <div class="mx-auto max-w-4xl px-6 lg:px-12">
+                <div class="mb-16 text-center">
+                    <h1 class="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6">Prompts y Estrategia UX/UI</h1>
+                    <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                        Una colección de las instrucciones y lineamientos estratégicos aplicados en la transición entre ingeniería eléctrica y el diseño centrado en el usuario.
+                    </p>
+                </div>
+
+                <div class="space-y-12">
+                    
+                    <!-- Prompt 1 -->
+                    <div class="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm">
+                        <div class="p-8 lg:p-10">
+                            <div class="flex items-center gap-3 mb-6">
+                                <span class="flex items-center justify-center rounded-full bg-primary/10 w-10 h-10 text-primary">
+                                    <span class="material-symbols-outlined">design_services</span>
+                                </span>
+                                <h3 class="text-2xl font-black text-slate-900 dark:text-white">Cambio de enfoque profesional</h3>
+                            </div>
+                            
+                            <div class="rounded-2xl bg-slate-50 dark:bg-slate-800/50 p-6 border border-slate-100 dark:border-slate-800 mb-8 space-y-4">
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-primary mr-2">Actúa como:</strong> un experto en transición profesional.</p>
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-primary mr-2">Tu tarea:</strong> transformando mi perfil de ingeniera electricista en un perfil atractivo para diseño UX/UI.</p>
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-primary mr-2">Contexto:</strong> destacando habilidades transferibles como análisis, resolución de problemas y pensamiento estructurado.</p>
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-primary mr-2">Estilo/Tono:</strong> que sea Profesional, estratégico y orientado a empleabilidad.</p>
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-red-500 mr-2">Limitaciones:</strong> No mencionar que “abandoné” la ingeniería ni usar lenguaje informal.</p>
+                            </div>
+
+                            <div>
+                                <h4 class="text-sm font-bold uppercase tracking-widest text-secondary mb-4 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-base">psychology</span> Resultado
+                                </h4>
+                                <div class="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+                                    <p>Diseñadora UX/UI con formación en ingeniería eléctrica y más de 10 años de experiencia en análisis técnico y diseño de soluciones estructuradas. Especializada en traducir problemas complejos en experiencias digitales claras, funcionales y centradas en el usuario.</p>
+                                    <p>Combino pensamiento analítico, enfoque sistémico y sensibilidad por la experiencia del usuario para crear productos digitales intuitivos, escalables y técnicamente viables.</p>
+                                    <p>Actualmente enfocada en diseño de interfaces, arquitectura de información y optimización de flujos digitales.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Prompt 2 -->
+                    <div class="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm">
+                        <div class="p-8 lg:p-10">
+                            <div class="flex items-center gap-3 mb-6">
+                                <span class="flex items-center justify-center rounded-full bg-primary/10 w-10 h-10 text-primary">
+                                    <span class="material-symbols-outlined">swap_calls</span>
+                                </span>
+                                <h3 class="text-2xl font-black text-slate-900 dark:text-white">Habilidades transferibles</h3>
+                            </div>
+                            
+                            <div class="rounded-2xl bg-slate-50 dark:bg-slate-800/50 p-6 border border-slate-100 dark:border-slate-800 mb-8 space-y-4">
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-primary mr-2">Actúa como:</strong> un mentor experto en transición de ingeniería eléctrica a diseño UX/UI.</p>
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-primary mr-2">Tu tarea:</strong> lista las habilidades técnicas y blandas de una ingeniera electricista que sean transferibles al diseño UX/UI y explica detalladamente cómo cada una se traduce al entorno digital.</p>
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-primary mr-2">Contexto:</strong> estoy redactando mi perfil profesional para cambiar de industria y necesito convencer a los reclutadores de tecnología de que mi formación técnica es una ventaja competitiva en el diseño UX/UI.</p>
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-primary mr-2">Estilo/Tono:</strong> que sea profesional, analítico y persuasivo. Usa un lenguaje que conecte la rigurosidad de la ingeniería con la creatividad del diseño.</p>
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-red-500 mr-2">Limitaciones:</strong> No menciones habilidades que no tengan una aplicación clara en el diseño digital. Organiza la respuesta en una tabla donde la primera columna sea la habilidad de ingeniería y la segunda su equivalente en UX/UI.</p>
+                            </div>
+
+                            <div>
+                                <h4 class="text-sm font-bold uppercase tracking-widest text-secondary mb-4 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-base">table_chart</span> Resultado
+                                </h4>
+                                <div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700 mt-4">
+                                    <table class="w-full text-left text-sm text-slate-600 dark:text-slate-400">
+                                        <thead class="bg-slate-50 dark:bg-slate-800/80 text-xs uppercase text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-slate-700">
+                                            <tr>
+                                                <th scope="col" class="px-6 py-4 font-bold min-w-[200px]">Habilidad de Ingeniería Eléctrica</th>
+                                                <th scope="col" class="px-6 py-4 font-bold">Equivalente y Traducción al UX/UI</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+                                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                                                <td class="px-6 py-4 font-bold text-slate-900 dark:text-white align-top">Diseño de Esquemas y Circuitos</td>
+                                                <td class="px-6 py-4"><strong class="text-slate-800 dark:text-slate-200">Arquitectura de Información y User Flows:</strong> Al igual que un circuito define el camino de la corriente para que un sistema funcione, en UX diseñas el flujo lógico que el usuario sigue para completar una tarea sin "cortocircuitos".</td>
+                                            </tr>
+                                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                                                <td class="px-6 py-4 font-bold text-slate-900 dark:text-white align-top">Pensamiento Sistémico</td>
+                                                <td class="px-6 py-4"><strong class="text-slate-800 dark:text-slate-200">Sistemas de Diseño (Design Systems):</strong> Tu capacidad para entender cómo un pequeño componente afecta a toda la red te permite crear librerías de componentes escalables y coherentes en Figma o Sketch.</td>
+                                            </tr>
+                                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                                                <td class="px-6 py-4 font-bold text-slate-900 dark:text-white align-top">Análisis de Fallas y Troubleshooting</td>
+                                                <td class="px-6 py-4"><strong class="text-slate-800 dark:text-slate-200">Pruebas de Usabilidad y Debugging de Experiencia:</strong> Identificar por qué un motor falla es idéntico a analizar por qué un usuario abandona un carrito de compra. Aplicas un método científico para iterar y solucionar problemas.</td>
+                                            </tr>
+                                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                                                <td class="px-6 py-4 font-bold text-slate-900 dark:text-white align-top">Normativas y Estándares Técnicos</td>
+                                                <td class="px-6 py-4"><strong class="text-slate-800 dark:text-slate-200">Accesibilidad (A11y) y Guías de Estilo:</strong> Estás habituada a trabajar bajo marcos regulatorios estrictos (como el NEC o IEC). Esto se traduce en un respeto natural por las normas WCAG de accesibilidad web.</td>
+                                            </tr>
+                                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                                                <td class="px-6 py-4 font-bold text-slate-900 dark:text-white align-top">Optimización de Recursos y Eficiencia</td>
+                                                <td class="px-6 py-4"><strong class="text-slate-800 dark:text-slate-200">Diseño de Interacción Eficiente:</strong> En ingeniería buscas la menor pérdida de energía; en UX buscas la menor carga cognitiva. Diseñas interfaces que permiten al usuario lograr su objetivo con el mínimo esfuerzo.</td>
+                                            </tr>
+                                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                                                <td class="px-6 py-4 font-bold text-slate-900 dark:text-white align-top">Documentación Técnica Rigurosa</td>
+                                                <td class="px-6 py-4"><strong class="text-slate-800 dark:text-slate-200">Handoff de Diseño a Desarrollo:</strong> Sabes documentar procesos para que otros los ejecuten. Esto es vital para comunicarte con desarrolladores frontend, entregando especificaciones que no dejen lugar a dudas.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Prompt 3 -->
+                    <div class="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm">
+                        <div class="p-8 lg:p-10">
+                            <div class="flex items-center gap-3 mb-6">
+                                <span class="flex items-center justify-center rounded-full bg-primary/10 w-10 h-10 text-primary">
+                                    <span class="material-symbols-outlined">lightbulb</span>
+                                </span>
+                                <h3 class="text-2xl font-black text-slate-900 dark:text-white">Propuesta de valor personal</h3>
+                            </div>
+                            
+                            <div class="rounded-2xl bg-slate-50 dark:bg-slate-800/50 p-6 border border-slate-100 dark:border-slate-800 mb-8 space-y-4">
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-primary mr-2">Actúa como:</strong> un consultor experto en comunicación.</p>
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-primary mr-2">Tu tarea:</strong> ayúdame a redactar una propuesta de valor breve y persuasiva para mi portafolio profesional.</p>
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-primary mr-2">Contexto:</strong> soy diseñadora UX/UI con background en ingeniería eléctrica. Quiero destacar cómo mi perfil combina creatividad en diseño de experiencias digitales con una sólida base técnica y analítica. El objetivo es transmitir lo que me diferencia y aportar credibilidad a mi portafolio.</p>
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-primary mr-2">Estilo/Tono:</strong> que sea profesional y convincente, claro y conciso (2–4 frases máximo), enfocado en destacar fortalezas y diferenciales, creativo pero accesible, evitando clichés.</p>
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-red-500 mr-2">Limitaciones:</strong> no exceder 4 frases, evitar lenguaje genérico (“soy apasionada por…”), no usar jerga técnica incomprensible, mantener coherencia entre UX/UI y la ingeniería eléctrica.</p>
+                            </div>
+
+                            <div>
+                                <h4 class="text-sm font-bold uppercase tracking-widest text-secondary mb-4 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-base">psychology</span> Resultado
+                                </h4>
+                                <div class="text-slate-600 dark:text-slate-400 leading-relaxed p-6 border-l-4 border-primary bg-primary/5 rounded-r-xl italic">
+                                    "Como diseñadora UX/UI con background en ingeniería eléctrica, ofrezco una perspectiva única que une sensibilidad estética con rigor técnico. Transformo ideas complejas en interfaces claras y atractivas, asegurando experiencias digitales que son tanto intuitivas como confiables."
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Prompt 4 -->
+                    <div class="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm">
+                        <div class="p-8 lg:p-10">
+                            <div class="flex items-center gap-3 mb-6">
+                                <span class="flex items-center justify-center rounded-full bg-primary/10 w-10 h-10 text-primary">
+                                    <span class="material-symbols-outlined">route</span>
+                                </span>
+                                <h3 class="text-2xl font-black text-slate-900 dark:text-white">Plan de aprendizaje estratégico</h3>
+                            </div>
+                            
+                            <div class="rounded-2xl bg-slate-50 dark:bg-slate-800/50 p-6 border border-slate-100 dark:border-slate-800 mb-8 space-y-4">
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-primary mr-2">Actúa como:</strong> un mentor o planificador de carrera que puede diseñar un plan estructurado y realista.</p>
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-primary mr-2">Tu tarea:</strong> crea un roadmap de 12 meses para convertirme en diseñadora UX/UI empleable, partiendo desde ingeniería eléctrica.</p>
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-primary mr-2">Contexto:</strong> tengo actualmente formación y experiencia en ingeniería eléctrica y quiero hacer la transición hacia el diseño UX/UI.</p>
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-primary mr-2">Estilo/Tono:</strong> que sea profesional, claro, motivador y práctico, enfocado en pasos concretos y alcanzables.</p>
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-red-500 mr-2">Limitaciones:</strong> el plan debe ajustarse a un período de 12 meses, considerando que empiezo desde cero en UX/UI y que tengo conocimientos en ingeniería eléctrica. También, debe ser realista en cuanto a los recursos y tiempo disponibles. Organiza la respuesta en una tabla.</p>
+                            </div>
+
+                            <div>
+                                <h4 class="text-sm font-bold uppercase tracking-widest text-secondary mb-4 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-base">table_chart</span> Resultado
+                                </h4>
+                                <div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700 mt-4">
+                                    <table class="w-full text-left text-sm text-slate-600 dark:text-slate-400">
+                                        <thead class="bg-slate-50 dark:bg-slate-800/80 text-xs uppercase text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-slate-700">
+                                            <tr>
+                                                <th scope="col" class="px-4 py-4 font-bold whitespace-nowrap">Mes</th>
+                                                <th scope="col" class="px-4 py-4 font-bold">Objetivos</th>
+                                                <th scope="col" class="px-4 py-4 font-bold">Acciones clave</th>
+                                                <th scope="col" class="px-4 py-4 font-bold">Recursos</th>
+                                                <th scope="col" class="px-4 py-4 font-bold">Resultado esperado</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+                                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                                                <td class="px-4 py-4 font-bold text-slate-900 dark:text-white whitespace-nowrap">1-2</td>
+                                                <td class="px-4 py-4 font-semibold text-slate-800 dark:text-slate-200">Fundamentos de UX/UI</td>
+                                                <td class="px-4 py-4">Investigar conceptos básicos, realizar cursos intro en plataformas como Coursera, Udemy</td>
+                                                <td class="px-4 py-4">Cursos gratuitos/pagos, libros básicos</td>
+                                                <td class="px-4 py-4">Comprender principios UX/UI y terminología</td>
+                                            </tr>
+                                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                                                <td class="px-4 py-4 font-bold text-slate-900 dark:text-white whitespace-nowrap">3-4</td>
+                                                <td class="px-4 py-4 font-semibold text-slate-800 dark:text-slate-200">Herramientas de diseño</td>
+                                                <td class="px-4 py-4">Aprender Figma/Adobe XD, crear proyectos simples</td>
+                                                <td class="px-4 py-4">Tutoriales en YouTube, práctica constante</td>
+                                                <td class="px-4 py-4">Dominio básico de herramientas de diseño</td>
+                                            </tr>
+                                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                                                <td class="px-4 py-4 font-bold text-slate-900 dark:text-white whitespace-nowrap">5-6</td>
+                                                <td class="px-4 py-4 font-semibold text-slate-800 dark:text-slate-200">Investigación y prototipado</td>
+                                                <td class="px-4 py-4">Aprender técnicas de investigación, crear wireframes y prototipos</td>
+                                                <td class="px-4 py-4">Libros, ejemplos en línea, proyectos prácticos</td>
+                                                <td class="px-4 py-4">Capacidad de diseñar prototipos simples y realizar investigación básica</td>
+                                            </tr>
+                                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                                                <td class="px-4 py-4 font-bold text-slate-900 dark:text-white whitespace-nowrap">7-8</td>
+                                                <td class="px-4 py-4 font-semibold text-slate-800 dark:text-slate-200">Proyecto personal y portafolio</td>
+                                                <td class="px-4 py-4">Diseñar un proyecto propio (app, web, solución realista), recopilar casos de estudio</td>
+                                                <td class="px-4 py-4">Redes, comunidades, feedback</td>
+                                                <td class="px-4 py-4">Primer proyecto para portafolio, entender el proceso completo</td>
+                                            </tr>
+                                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                                                <td class="px-4 py-4 font-bold text-slate-900 dark:text-white whitespace-nowrap">9-10</td>
+                                                <td class="px-4 py-4 font-semibold text-slate-800 dark:text-slate-200">Especialización y networking</td>
+                                                <td class="px-4 py-4">Participar en comunidades, buscar mentores, aplicar en freelances o becas</td>
+                                                <td class="px-4 py-4">LinkedIn, comunidades UX/UI</td>
+                                                <td class="px-4 py-4">Mejorar visibilidad y red de contactos, experiencia real</td>
+                                            </tr>
+                                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                                                <td class="px-4 py-4 font-bold text-slate-900 dark:text-white whitespace-nowrap">11-12</td>
+                                                <td class="px-4 py-4 font-semibold text-slate-800 dark:text-slate-200">Preparación laboral</td>
+                                                <td class="px-4 py-4">Mejorar CV, perfil LinkedIn, preparar entrevistas, aplicar a empleos</td>
+                                                <td class="px-4 py-4">Talleres, mock interviews</td>
+                                                <td class="px-4 py-4">Empezar a recibir ofertas o prácticas en UX/UI</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Prompt 5 -->
+                    <div class="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm">
+                        <div class="p-8 lg:p-10">
+                            <div class="flex items-center gap-3 mb-6">
+                                <span class="flex items-center justify-center rounded-full bg-primary/10 w-10 h-10 text-primary">
+                                    <span class="material-symbols-outlined">description</span>
+                                </span>
+                                <h3 class="text-2xl font-black text-slate-900 dark:text-white">Construcción de caso de estudio transferible</h3>
+                            </div>
+                            
+                            <div class="rounded-2xl bg-slate-50 dark:bg-slate-800/50 p-6 border border-slate-100 dark:border-slate-800 mb-8 space-y-4">
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-primary mr-2">Actúa como:</strong> un mentor senior en UX/UI con experiencia evaluando portafolios junior.</p>
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-primary mr-2">Tu tarea:</strong> ayúdame a convertir un proyecto técnico de ingeniería eléctrica en un caso de estudio presentado bajo metodología UX para incluir en mi portafolio.</p>
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-primary mr-2">Contexto:</strong> estoy construyendo mi portafolio como diseñadora UX/UI en transición desde ingeniería.</p>
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-primary mr-2">Formato:</strong> Estructura tipo UX, Contexto, Problema, Investigación, Análisis, Solución, Impacto.</p>
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-primary mr-2">Estilo/Tono:</strong> que sea profesional, claro y enfocado en pensamiento de diseño.</p>
+                                <p class="text-sm text-slate-700 dark:text-slate-300"><strong class="text-red-500 mr-2">Limitaciones:</strong> damelo en 150 palabras, no inventar entrevistas de usuario si no las realicé. No usar terminología UX avanzada si no se aplicó realmente. Mantener coherencia con mi experiencia real.</p>
+                            </div>
+
+                            <div>
+                                <h4 class="text-sm font-bold uppercase tracking-widest text-secondary mb-4 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-base">psychology</span> Resultado
+                                </h4>
+                                <div class="text-slate-600 dark:text-slate-400 leading-relaxed space-y-4">
+                                    <p>Participé en un proyecto de diseño eléctrico en baja tensión para una edificación comercial, enfocado en eficiencia energética y cumplimiento normativo. Durante la revisión del sistema, identifiqué que la organización de circuitos dificultaba la lectura de planos y aumentaba el riesgo de errores durante el mantenimiento. Realicé un análisis detallado de la documentación técnica, normativa aplicable y flujo de operación del sistema.</p>
+                                    <p>A través de la observación del proceso técnico y la revisión de incidencias previas, detecté que el problema principal no era la capacidad del sistema, sino su estructura organizativa.</p>
+                                    <p>Propuse una reorganización con jerarquías claras, agrupación lógica de circuitos y nomenclatura más legible. El resultado fue menor tiempo de diagnóstico y menos margen de error para quien operara el sistema. Este proyecto evidencia mi capacidad para analizar sistemas complejos, identificar fricciones y diseñar soluciones estructuradas, competencias directamente transferibles al diseño UX/UI centrado en la experiencia del usuario.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+        
+        <footer class="py-12 text-center text-slate-400 text-xs mt-auto border-t border-slate-200 dark:border-slate-800">
+            Hecho con dedicación por Daniela Jaimes.
+        </footer>
+    </div>
+</body>
+
+</html>

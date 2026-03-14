@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Imágenes | Daniela Jaimes - UX/UI</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6",
+                        "secondary": "#8B5CF6",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#0F172A",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div class="relative flex min-h-screen flex-col overflow-x-hidden">
+        <!-- Navigation -->
+        <header
+            class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+            <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-12">
+                <a href="index.html" class="flex items-center gap-2 text-primary hover:opacity-80 transition-opacity"
+                    title="Volver al inicio">
+                    <span class="material-symbols-outlined text-3xl font-bold">polyline</span>
+                    <h2 class="text-xl font-black tracking-tight text-slate-900 dark:text-white">Daniela Jaimes</h2>
+                </a>
+                <nav class="hidden md:flex items-center gap-6 lg:gap-8">
+                    <a class="text-sm font-semibold hover:text-primary transition-colors"
+                        href="index.html#proyectos">Proyectos</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors"
+                        href="index.html#sobre-mi">Sobre mí</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors"
+                        href="index.html#habilidades">Habilidades</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors"
+                        href="index.html#contacto">Contacto</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors"
+                        href="prompts.html">Prompts</a>
+                    <a class="text-sm font-semibold text-primary transition-colors border-b-2 border-primary"
+                        href="imagenes.html">Imágenes</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <a href="cv - daniela jaimes.pdf" download
+                        class="flex items-center justify-center rounded-lg bg-gradient-to-r from-primary to-secondary px-5 py-2.5 text-sm font-bold text-white transition-all hover:opacity-90 hover:shadow-lg hover:shadow-primary/20">
+                        <span>Descargar CV</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow pt-16 pb-24">
+            <div class="mx-auto max-w-7xl px-6 lg:px-12">
+                <div class="mb-16 text-center">
+                    <h1 class="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6">Galería Visual</h1>
+                    <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                        Una selección de recursos gráficos, diagramas de arquitectura de información Vs sistema
+                        eléctrico, interfaces y
+                        branding que acompañan mi proceso de diseño UX/UI.
+                    </p>
+                </div>
+
+                <!-- Masonry-like Grid Layout -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Imagen 4 -->
+                    <div
+                        class="group relative rounded-3xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 lg:col-span-2">
+                        <div
+                            class="aspect-[16/9] md:aspect-[21/9] w-full bg-slate-100 dark:bg-slate-800/80 overflow-hidden relative">
+                            <img src="images/Imágen 4.png" alt="Visual conceptual"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                loading="lazy">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent transition-opacity">
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-8">
+                            <span
+                                class="inline-block rounded-full bg-primary/20 px-3 py-1 text-xs font-bold text-white mb-3 backdrop-blur-md border border-white/10">Imagen
+                                1: Herramienta
+                                Grok</span>
+                            <h3 class="text-2xl font-black text-white drop-shadow-md">Visual conceptual</h3>
+                        </div>
+                    </div>
+
+                    <!-- Imagen 5 -->
+                    <div
+                        class="group relative rounded-3xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 lg:col-span-2 flex flex-col">
+
+                        <div class="flex-grow bg-slate-100 dark:bg-slate-800/80 overflow-hidden relative">
+
+                            <img src="images/imagen 5.png" alt="Diagrama comparativo"
+                                class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                                loading="lazy">
+
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity">
+                            </div>
+
+                            <div class="absolute bottom-0 left-0 right-0 p-6">
+
+                                <span
+                                    class="inline-block rounded-full bg-secondary/80 px-3 py-1 text-xs font-bold text-white mb-2 backdrop-blur-md shadow-sm border border-white/10">
+                                    Imagen 2: Herramienta Leonardo
+                                </span>
+
+                                <h3 class="text-xl font-bold text-white drop-shadow-md">
+                                    Diagrama comparativo
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Imagen 6 -->
+                    <div
+                        class="group relative rounded-3xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+
+                        <div class="aspect-square w-full bg-slate-100 dark:bg-slate-800/80 overflow-hidden relative">
+
+                            <img src="images/imagen 6.png" alt="Interfaz"
+                                class="w-full h-full object-contain p-4 md:p-8 transition-transform duration-700 group-hover:scale-105"
+                                loading="lazy">
+
+                            <!-- Overlay con texto dentro de la imagen -->
+                            <div
+                                class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent">
+
+                                <span
+                                    class="inline-block w-fit rounded-full bg-primary/80 px-3 py-1 text-xs font-bold text-white mb-2 shadow-sm border border-white/10">
+                                    Imagen 3: Herramienta Artlist.io
+                                </span>
+
+                                <h3 class="text-lg font-bold text-white drop-shadow-md">
+                                    Interfaz
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Imagen 7 -->
+                    <div
+                        class="group relative rounded-3xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+                        <div class="aspect-square w-full bg-slate-100 dark:bg-slate-800/80 overflow-hidden relative">
+                            <img src="images/imagen 7.png" alt="Mapa de empatía"
+                                class="w-full h-full object-contain p-4 md:p-8 transition-transform duration-700 group-hover:scale-105"
+                                loading="lazy">
+                            <div
+                                class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                                <span
+                                    class="inline-block w-fit rounded-full bg-secondary/80 px-3 py-1 text-xs font-bold text-white mb-2 shadow-sm border border-white/10">Imagen
+                                    4: Herramienta Krea</span>
+                                <h3 class="text-lg font-bold text-white">Mapa de empatía</h3>
+                            </div>
+                        </div>
+                        <div
+                            class="p-6 group-hover:opacity-0 transition-opacity absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/90 to-transparent">
+                            <span
+                                class="inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-bold text-white mb-2 backdrop-blur-md border border-white/10">Imagen
+                                4</span>
+                            <h3 class="text-lg font-bold text-white drop-shadow-md">Mapa de empatía</h3>
+                        </div>
+                    </div>
+
+                    <!-- Imagen 8 -->
+                    <div
+                        class="group relative rounded-3xl overflow-hidden shadow-sm border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 lg:col-span-3 mt-4">
+                        <div class="flex flex-col md:flex-row items-stretch">
+                            <div
+                                class="w-full md:w-1/2 lg:w-3/5 bg-slate-100 dark:bg-slate-800/80 overflow-hidden relative md:min-h-[400px]">
+                                <img src="images/imagen 8.png" alt="Branding personal minimalista"
+                                    class="absolute inset-0 w-full h-full object-contain p-4 md:p-8 transition-transform duration-700 group-hover:scale-105"
+                                    loading="lazy">
+                            </div>
+                            <div
+                                class="w-full md:w-1/2 lg:w-2/5 p-8 lg:p-12 flex flex-col justify-center bg-gradient-to-br from-primary/5 to-secondary/5">
+                                <span
+                                    class="inline-block w-fit rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-bold mb-4">Imagen
+                                    5: Herramienta Stablediffusion</span>
+                                <h3 class="text-3xl font-black text-slate-900 dark:text-white mb-4">Branding personal
+                                    minimalista</h3>
+                                <p class="text-slate-600 dark:text-slate-400 mb-6 line-clamp-4">
+                                    Aplicación de mi estilo visual personal, orientado a transmitir profesionalismo,
+                                    enfoque en el detalle y claridad. El minimalismo estructurado permite que el
+                                    contenido y la experiencia del usuario sean los protagonistas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <footer
+            class="py-12 text-center text-slate-400 text-xs mt-auto border-t border-slate-200 dark:border-slate-800">
+            Hecho con dedicación por Daniela Jaimes.
+        </footer>
+    </div>
+</body>
+
+</html>
